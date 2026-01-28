@@ -1,0 +1,52 @@
+# local devcontainer aws creds
+.aws/
+
+# SECRET VARS (do not push to git)
+# Includes AWS Account ID, AWS Access Key, AWS Secret Access Key
+global/secret.tfvars
+
+# Do Not Push Symlinked Configuration Files
+*/global.tfvars
+*/secret.tfvars
+
+# Do Not Push Symlinked Environment Files
+*/*/env.tf
+*/*/env.tfvars
+*/*/*/env.tf
+*/*/*/env.tfvars
+stacks/*/global.tf
+
+# Do Not Push Symlinked Configuration Files
+*/*/global.tfvars
+*/*/secret.tfvars
+
+# Do not Push .terraform modules
+*/.terraform
+**/.terraform
+**/.terraform.d
+**/terraform.tfstate.d
+
+
+tmp.tfvars
+**.tfstate.backup
+**.terraform
+**.tfstate
+**tfstate.lock.info
+**crash.log
+files/route53_subnet_seeder
+
+# Ignore vscode
+.vscode
+**/terraform.tfvars
+.idea
+bin
+.DS_Store
+*.code-workspace
+
+.envrc
+
+# Keep tf state with repo for initialization of the actual terraform backend
+!**/tf-backend/terraform.tfstate.d
+!**/tf-backend/terraform.tfstate.d/*/**.tfstate
+!**/tf-backend/terraform.tfstate.d/*/**.tfstate.backup
+!**/tf-backend/terraform.tfstate.d/*/.terraform.tfstate.lock.info

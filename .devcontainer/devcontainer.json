@@ -1,0 +1,29 @@
+{
+  "name": "Core Terraform DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "HashiCorp.terraform",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "extensions.verifySignature": false,
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "containerEnv": {
+    "AWS_ORG": "TODO: Set your AWS SSO start url subdomain here"
+  },
+  "postCreateCommand": "zsh -c \"source /home/vscode/.zshrc\"",
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "mounts": [
+    "source=core-terraform-aws-config,target=/home/vscode/.aws,type=volume"
+  ]
+}
