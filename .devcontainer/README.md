@@ -47,17 +47,14 @@ Once inside the devcontainer, you'll have access to:
 ### Example Usage
 
 ```bash
-# Auto load your AWS Profiles
+# Auto load your AWS Profiles - your AWS config will persist between devcontainer rebuilds
 awssso-populate-profiles
 
-# Switch AWS profiles using SSO
+# Switch AWS profiles using SSO with auto completion
 awssso my-profile
 
-# Use the terraform wrapper
-./terraform.sh ops aws-sso plan
-
-# Use tfswitch to change Terraform versions
-tfswitch
+# Use the terraform wrapper via the 't' command with auto completion
+t ops aws-sso plan
 ```
 
 ## Automatic Setup

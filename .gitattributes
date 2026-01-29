@@ -1,0 +1,4 @@
+# Force all text files to LF, ensuring scripts work in the devcontainer
+* text=auto eol=lf
+# Explicitly target shell scripts if needed
+*.sh text eol=lf

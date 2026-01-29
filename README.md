@@ -47,6 +47,17 @@ Use the provided DevContainer for a consistent development environment with all 
 
 See [`.devcontainer/README.md`](.devcontainer/README.md) for detailed DevContainer documentation.
 
+```bash
+# Auto load your AWS Profiles - your AWS config will persist between devcontainer rebuilds
+awssso-populate-profiles
+
+# Switch AWS profiles using SSO with auto completion
+awssso my-profile
+
+# Use the terraform wrapper via the 't' command with auto completion
+t ops aws-sso plan
+```
+
 ### Option 2: Local Development
 
 **Prereqs:**

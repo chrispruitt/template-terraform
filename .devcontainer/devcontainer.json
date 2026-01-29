@@ -12,12 +12,24 @@
       ],
       "settings": {
         "extensions.verifySignature": false,
-        "terminal.integrated.defaultProfile.linux": "zsh"
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        // Enable format on save globally for all files
+        "editor.formatOnSave": true,
+        // Optional: Ensure the HashiCorp extension is the default formatter for Terraform
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform"
+        },
+        // Keep it neat
+        "files.autoSave": "onFocusChange",
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.eol": "\n"
       }
     }
   },
   "containerEnv": {
-    "AWS_ORG": "TODO: Set your AWS SSO start url subdomain here"
+    "AWS_ORG": "<Replace with subdomain of aws sso start url>"
   },
   "postCreateCommand": "zsh -c \"source /home/vscode/.zshrc\"",
   "remoteUser": "vscode",
@@ -25,5 +37,9 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "mounts": [
     "source=core-terraform-aws-config,target=/home/vscode/.aws,type=volume"
+  ],
+  "runArgs": [
+    "--platform",
+    "linux/amd64"
   ]
 }

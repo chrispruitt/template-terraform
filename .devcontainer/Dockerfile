@@ -57,5 +57,8 @@ RUN mkdir -p /home/vscode/.aws
 # Ensure tfswitch terraform install path exists
 RUN mkdir -p /home/vscode/bin
 
+# Install latest version of terraorm by default to enable formatter on start
+RUN tfswitch -u
+
 # Set working directory
 WORKDIR /workspace
